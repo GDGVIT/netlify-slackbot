@@ -29,7 +29,7 @@ go install
 * ENVIRONMRNTAL VARIABLES REQUIRED
 
 ```bash
-export PORT=<YOUR_PORT_ADDRES>
+export PORT=<PORT_NUMBER>
 export DB_URL=<URL_HERE>
 ```
 ## Screenshots
