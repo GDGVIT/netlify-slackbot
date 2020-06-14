@@ -8,10 +8,6 @@
 </p>
 
 ---
-[![DOCS](https://img.shields.io/badge/Documentation-see%20docs-green?style=flat-square&logo=appveyor)](_)
-  [![UI ](https://img.shields.io/badge/User%20Interface-Link%20to%20UI-orange?style=flat-square&logo=appveyor)](_)
-
-
 ## Functionalities
 - [X]  Functionality to create and manage a project.
 - [X]  Build Notification updates using the slackbot.
