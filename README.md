@@ -8,34 +8,38 @@
 </p>
 
 ---
-[![DOCS](https://img.shields.io/badge/Documentation-see%20docs-green?style=flat-square&logo=appveyor)](_) 
+[![DOCS](https://img.shields.io/badge/Documentation-see%20docs-green?style=flat-square&logo=appveyor)](_)
   [![UI ](https://img.shields.io/badge/User%20Interface-Link%20to%20UI-orange?style=flat-square&logo=appveyor)](_)
 
 
 ## Functionalities
-- [ ]  Functionality to create an account to manage a project.
-- [ ]  Build Notification updates using the slackbot.
-- [ ]  Debug information updates using slackbot.
+- [X]  Functionality to create and manage a project.
+- [X]  Build Notification updates using the slackbot.
+- [X]  Debug information updates using slackbot.
 <br>
 
 
 ## Instructions to run
 
 * Pre-requisites:
-	-  < insert pre-requisite >
-	-  < insert pre-requisite >
+	-	Golang
+	-	GoFiber
 
-* < directions to install > 
+* directions to install
 ```bash
-< insert code >
+go install
 ```
 
-* < directions to execute >
+* ENVIRONMRNTAL VARIABLES REQUIRED
 
 ```bash
-< insert code >
+export PORT=<YOUR_PORT_ADDRES>
+export DB_URL=<URL_HERE>
 ```
-
+## Screenshots
+[](https://raw.githubusercontent.com/mayankkumar2/netlify-slackbot/master/screenshots/1.png)
+[](https://raw.githubusercontent.com/mayankkumar2/netlify-slackbot/master/screenshots/2.png)
+[](https://raw.githubusercontent.com/mayankkumar2/netlify-slackbot/master/screenshots/3.png)
 ## Contributors
 
 <table>
@@ -63,4 +67,3 @@ Mayank Kumar
 <p align="center">
 	Made with :heart: by <a href="https://dscvit.com">DSC VIT</a>
 </p>
-

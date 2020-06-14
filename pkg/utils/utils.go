@@ -1,6 +1,8 @@
 package utils
 
 import (
+	"fmt"
+	"net/http"
 	"net/url"
 	"strings"
 )
@@ -14,4 +16,11 @@ func ParseQueryString(qry string) map[string] string {
 		m[q[0]] = q[1]
 	}
 	return m
+}
+
+func SlackMessage(URL string, msg string) {
+	http.Post(URL,
+		"appliaction/json",
+		strings.NewReader(
+			fmt.Sprintf(`{"text":"%s"}`, msg)))
 }

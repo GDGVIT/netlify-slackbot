@@ -1,13 +1,21 @@
 package dbOperations
 
 import (
+	"context"
+	"encoding/json"
 	"fmt"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	"context"
+	"log"
+	"net/http"
+	"os"
+	"regexp"
+	"sort"
 )
-var URL string = "mongodb+srv://dbAdmin:loop001@netlify-bot-edcen.mongodb.net/test?retryWrites=true&w=majority"
+var URL string = os.Getenv("DB_URL")
+
+
 type Project struct {
 	Name string
 	URL string
@@ -23,6 +31,7 @@ func check(e error) int8 {
 	}
 	return 0
 }
+
 func CheckIFExists(name string) int8 {
 	clientOptions := options.Client().ApplyURI(URL)
 	ctx := context.TODO()
@@ -183,4 +192,39 @@ func GetLogURL(name string) string {
 		"name": name,
 	}).Decode(&m)
 	return m.URL
+}
+func GetLogs(name string) string {
+	URL := GetLogURL(name)
+	if URL == "" {
+		return ""
+	}
+	resp, _ := http.Get(URL)
+	var m map[string] interface{}
+	e := json.NewDecoder(resp.Body).Decode(&m)
+	if e != nil {
+		log.Fatalln(e)
+	}
+	keys := make([]string,len(m))
+	count :=0
+	for v,_ := range m {
+		keys[count] = v
+		count++
+	}
+	sort.Strings(keys)
+	count = 0
+	CompleteLogs := "LOGS ["+name+"]"
+	for _,v := range keys {
+		value := m[v].(map[string] interface{})
+		logs := value["log"].(string)
+		reg, err := regexp.Compile("[^a-zA-Z0-9/.]+")
+		if err != nil {
+			log.Fatal(err)
+		}
+		processedString := reg.ReplaceAllString(logs, " ")
+		count++
+		if processedString[0] != ' '{
+			CompleteLogs+=fmt.Sprintf("\n[%d] %s", count, processedString)
+		}
+	}
+	return CompleteLogs
 }
