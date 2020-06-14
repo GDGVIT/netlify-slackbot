@@ -33,9 +33,9 @@ export PORT=<PORT_NUMBER>
 export DB_URL=<URL_HERE>
 ```
 ## Screenshots
-![](https://raw.githubusercontent.com/mayankkumar2/netlify-slackbot/master/screenshots/1.png)
-![](https://raw.githubusercontent.com/mayankkumar2/netlify-slackbot/master/screenshots/2.png)
-![](https://raw.githubusercontent.com/mayankkumar2/netlify-slackbot/master/screenshots/3.png)
+![BUILDING_SCEENSHOT](https://raw.githubusercontent.com/mayankkumar2/netlify-slackbot/master/screenshots/1.png)
+![READY_SCREENSHOT](https://raw.githubusercontent.com/mayankkumar2/netlify-slackbot/master/screenshots/2.png)
+![PROJECT_BUILD_LOGS](https://raw.githubusercontent.com/mayankkumar2/netlify-slackbot/master/screenshots/3.png)
 ## Contributors
 
 <table>
